@@ -32,7 +32,7 @@ sns.regplot(data=yearly_tmax_mean, x="year", y="Max Temp", lowess=True, scatter_
 ax.set_title("Promedio de Temperatura Máxima por año", fontsize=15)
 ax.set_xlabel("Año", fontsize=12)
 ax.set_ylabel("Temperatura (°C)", fontsize=12)
-plt.savefig("temp1.png")
+plt.savefig("plots/temp1.png")
 plt.show()
 
 #%%
@@ -44,5 +44,5 @@ sns.regplot(data=yearly_tmin_mean, x="year", y="Min Temp", lowess=True, scatter_
 ax.set_title("Promedio de Temperatura Mínima por año", fontsize=15)
 ax.set_xlabel("Año", fontsize=12)
 ax.set_ylabel("Temperatura (°C)", fontsize=12)
-plt.savefig("temp2.png")
+plt.savefig("plots/temp2.png")
 plt.show()
