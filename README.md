@@ -32,7 +32,13 @@ to get the complete dataset.
 We explored different Auto Regressive models, finally fitting one that gave us an Absolute Error 
 of 2-3 °K.
 
-For example, we got:
+Run
+```
+graphs.py
+```
+to get some basic temperature estimation.
+
+As an example, we got:
 
 <img src="plots/example1.png"/> 
 
