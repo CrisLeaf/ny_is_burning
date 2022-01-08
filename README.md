@@ -42,6 +42,18 @@ As an example, we got:
 
 <img src="plots/example1.png"/> 
 
+## Graphs
+You can also get some trend graphs by running
+```
+graphs.py
+```
+on terminal. They are the following:
+
+<img src="plots/temp1.png"/>
+<img src="plots/temp2.png"/>
+
+
+
 ## Support
 
 Give a :star: if you like it :hugs:.
