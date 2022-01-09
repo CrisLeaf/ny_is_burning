@@ -46,3 +46,39 @@ ax.set_xlabel("Año", fontsize=12)
 ax.set_ylabel("Temperatura (°C)", fontsize=12)
 plt.savefig("plots/temp2.png")
 plt.show()
+
+#%%
+tmax_mean_temp = yearly_tmax_mean["Max Temp"].mean()
+yearly_tmax_mean["tmax_diffs"] = yearly_tmax_mean["Max Temp"].apply(lambda x: x - tmax_mean_temp)
+
+colors = ["firebrick" if x >= 0 else "royalblue" for x in yearly_tmax_mean["tmax_diffs"].values]
+xticks = [str(value) if round(value / 20, 0) == value / 20
+		  else "" for value in yearly_tmax_mean["year"]]
+
+fig, ax = plt.subplots(figsize=(6, 6))
+sns.barplot(data=yearly_tmax_mean, x="year", y="tmax_diffs", palette=colors, linewidth=0)
+ax.set_title("Diferencia de Temperatura Máxima por año", fontsize=15)
+ax.set_xticklabels(xticks)
+ax.set_xlabel("Año", fontsize=12)
+ax.set_ylabel("Temperatura (°C)", fontsize=12)
+plt.savefig("plots/diff1.png")
+plt.show()
+
+#%%
+tmin_mean_temp = yearly_tmin_mean["Min Temp"].mean()
+yearly_tmin_mean["tmin_diffs"] = yearly_tmin_mean["Min Temp"].apply(lambda x: x - tmin_mean_temp)
+
+colors = ["firebrick" if x >= 0 else "royalblue" for x in yearly_tmin_mean["tmin_diffs"].values]
+xticks = [str(value) if round(value / 20, 0) == value / 20
+		  else "" for value in yearly_tmin_mean["year"]]
+
+fig, ax = plt.subplots(figsize=(6, 6))
+sns.barplot(data=yearly_tmin_mean, x="year", y="tmin_diffs", palette=colors, linewidth=0)
+ax.set_title("Diferencia de Temperatura Mínima por año", fontsize=15)
+ax.set_xticklabels(xticks)
+ax.set_xlabel("Año", fontsize=12)
+ax.set_ylabel("Temperatura (°C)", fontsize=12)
+plt.savefig("plots/diff2.png")
+plt.show()
+
+#%%
